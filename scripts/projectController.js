@@ -10,6 +10,9 @@
     $('#contain-education').hide();
     $('#contain-technical-skills').hide();
     $('#about').hide();
+    
+    $('#repos').hide();
+
 
     $('.contain-checklist').show();
     $('#projects').show();

@@ -30,6 +30,13 @@
   {{date}} <br><br>
 </script>
 
+<script id='repo-template' type='text/x-handlebars-template'>
+  <div class="repo row">
+  <a href="{{clone_url}}" target="_blank"><h1><img src="media/tree3_c.png">{{name}}<img src="media/tree3_c.png"></h2></a>
+    <p>{{description}}</p>
+  </div>
+</script>
+
 </head>
 <body>
 
@@ -46,7 +53,8 @@
  <!-- <a class="link" href="http://ankihg.ucoz.com/resume_online.pdf" target="_blank"><img src="media/mtn.png"> Resume</a> -->
  <a class="link" href="/projects"><img src="media/tree3_c.png"> Projects</a>
  <a class="link" href="/about"><img src="media/mtn.png"> About me</a>
- <a class="link" href="https://github.com/ankihg/" target="_blank"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"> GitHub</a>
+ <!-- <a class="link" href="https://github.com/ankihg/" target="_blank"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"> GitHub</a> -->
+ <a class="link" href="/repos"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"> GitHub</a>
  <a class="link" href="https://www.linkedin.com/in/annika-hagelin-a8b949ab" target="_blank"><img src="http://uxrepo.com/static/icon-sets/brandico/svg/linkedin-rect.svg"> LinkedIn</a>
 
 </div>
@@ -55,6 +63,7 @@
 <canvas id="myCanvas" width="200" height="100" onClick="loadTrees()"> <!style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.
 </canvas>
+
 <script src="/scripts/treeCanvas.js"></script>
 </a>
 
@@ -108,6 +117,8 @@ Your browser does not support the HTML5 canvas tag.
   <p>welcome. my name is annika. i come from the san francisco east bay and now i live in seattle. i like to program, study language, and play music. please enjoy my website.  </p>
 </section>
 
+<div id='repos'></div>
+
 <span class="treeLine">
 <img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png"><img class="inlImg" src="media/tree3_c.png">
 </span>
@@ -121,11 +132,18 @@ Your browser does not support the HTML5 canvas tag.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 <script src="vendor/page.js"></script>
 
+<script src="/scripts/githubToken.js"></script>
+
 <script src="scripts/indexController.js"></script>
 
 <script src="scripts/project.js"></script>
 <script src="scripts/projectView.js"></script>
 <script src="scripts/projectController.js"></script>
+
+
+<script src="scripts/repo.js"></script>
+<script src="scripts/repoView.js"></script>
+<script src="scripts/repoController.js"></script>
 
 <script src="scripts/education.js"></script>
 

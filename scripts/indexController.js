@@ -12,6 +12,9 @@
         $('#projects').hide();
 
         $('#about').show();
+
+        $('#repos').hide();
+
   };
 
   module.indexController = indexController;

@@ -151,3 +151,17 @@ footer {
   width: 5%;
   height: 5%;
 }
+
+.repo {
+  border:6px solid #ccc;
+  margin: 1%;
+  padding: 1%;
+}
+.repo h1 {
+  text-align:center;
+}
+.repo img {
+  display: inline;
+  width: 5%;
+  height: 5%;
+}
