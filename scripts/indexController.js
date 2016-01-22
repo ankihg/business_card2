@@ -4,7 +4,7 @@
 
 
   indexController.index = function() {
-        Project.fetchAll(projectView.initIndexPage);
+    console.log('indexController index');
         $('#contain-education').show();
         $('#contain-technical-skills').show();
 
@@ -12,6 +12,7 @@
         $('#projects').hide();
 
         $('#about').show();
+        $('main').show();
   };
 
   module.indexController = indexController;

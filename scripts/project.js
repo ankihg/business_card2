@@ -43,11 +43,12 @@ Project.loadAll = function(rawData) {
 
   rawData.map(function(elm) {
     Project.all.push(new Project(elm));
+    console.log('project created and pushed');
   });
 
-  Project.all.map(function(p) {
-    p.make();
-  });
+  // Project.all.map(function(p) {
+  //   p.make();
+  // });
 };
 
 Project.fetchAll = function(callNext) {
@@ -94,7 +95,22 @@ Project.countProjPerTag = function(tag) {
       return true;
     }
   }).length;
-}
+};
+
+Project.allTags = function(tag) {
+
+  return Project.all.map(function(p) {
+    return p.tags;
+  }).reduce(function(uniqueTags, projectTags) {
+    projectTags.filter(function(tag) {
+      return uniqueTags.indexOf(tag) < 0;
+    }).forEach(function (tag) {
+      uniqueTags.push(tag);
+    });
+    return uniqueTags;
+  }, []);
+
+};
 
 
   module.Project = Project;

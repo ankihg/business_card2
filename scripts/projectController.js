@@ -1,20 +1,27 @@
 (function(module) {
   var projectController = {};
 
+  Project.fetchAll(projectView.initIndexPage);
 
-
-  projectController.index = function() {
+projectController.index = function(ctx, next) {
     console.log('projectController index')
-    Project.fetchAll(projectView.initIndexPage);
 
     $('#contain-education').hide();
     $('#contain-technical-skills').hide();
     $('#about').hide();
-
-    $('.contain-checklist').show();
+    //
+    // $('.contain-checklist').show();
+    // $('#projects').show();
+    // $('main').children().hide();
     $('#projects').show();
+    $('.contain-checklist').show();
+
+
+    projectView.index(ctx);
 
   };
+
+
 
   module.projectController = projectController;
 })(window);
