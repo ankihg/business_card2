@@ -37,15 +37,28 @@ projectView.handleChecklist = function() {
   $('#tag-checklist').on('change', function() {
     console.log('checklist callback');
     resource = "projects"; //this.id.replace('-filter', '');
-    // if (window.location.pathname === 'projects')
 
     var $checkedTags = $(this).find(':checked');
-    if ($checkedTags.length > 0) {
-      var firstTag = $checkedTags.eq(0).val();
-      console.log('/' + resource + '/' + firstTag.replace(/\W+/g, '+'));
-      page('/' + resource + '/' + firstTag.replace(/\W+/g, '+')); // Replace any/all whitespace with a +
-    } else { //nothing is checked
-      page('/' + resource + '/'); //go to projects page
+
+    if (window.location.pathname === '/projects') {
+      if ($checkedTags.length > 0) {
+        var firstTag = $checkedTags.eq(0).val();
+        console.log('/' + resource + '/' + firstTag.replace(/\W+/g, '+'));
+        page('/' + resource + '/' + firstTag.replace(/\W+/g, '+')); // Replace any/all whitespace with a +
+      } else { //nothing is checked
+        page('/' + resource + '/'); //go to projects page
+      }
+    } else {
+      $('#projects').empty();
+      if ($checkedTags.length > 0) {
+        $('#projects').show();
+        $checkedTags.each(function(t) {
+            projectView.displayTag($checkedTags.eq(t).val());
+        });
+      } else {
+        $('#projects').hide();
+      }
+
     }
   });
 };
@@ -125,12 +138,6 @@ projectView.initIndexPage = function() {
   projectView.handleChecklist();
 };
 
-/*$(document).ready(function() {
-  projectView.populateChecklist();
-  projectView.handleChecklist();
-  // projectView.populateFilter();
-  // projectView.handleFilter();
-});*/
 
 module.projectView = projectView;
 })(window);

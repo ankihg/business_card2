@@ -9,10 +9,7 @@ projectController.index = function(ctx, next) {
     $('#contain-education').hide();
     $('#contain-technical-skills').hide();
     $('#about').hide();
-    //
-    // $('.contain-checklist').show();
-    // $('#projects').show();
-    // $('main').children().hide();
+
     $('#projects').show();
     $('.contain-checklist').show();
 
