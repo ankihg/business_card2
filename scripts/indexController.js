@@ -4,15 +4,24 @@
 
 
   indexController.index = function() {
-        Project.fetchAll(projectView.initIndexPage);
-        $('#contain-education').show();
-        $('#contain-technical-skills').show();
-
-        $('.contain-checklist').show();
-        $('#projects').hide();
-
-        $('#about').show();
+    console.log('indexController index');
+    ui();
   };
+
+  function ui() {
+    // Tree.loadTrees();
+
+    $('#contain-education').show();
+    $('#contain-technical-skills').show();
+
+    $('.contain-checklist').show();
+    $('#projects').hide();
+
+    $('#about').show();
+    $('main').show();
+
+    $('#tag-checklist :checked').removeAttr('checked');
+  }
 
   module.indexController = indexController;
 })(window);
