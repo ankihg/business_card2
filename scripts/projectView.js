@@ -69,55 +69,6 @@ projectView.handleChecklist = function() {
   });
 };
 
-/*projectView.handleChecklist = function() {
-  $('#tag-checklist').on('change', function() {
-
-    $('#projects').show();
-
-    projectView.clearItems();
-
-    var $checkedTags = $(this).find(':checked');
-
-    if ($checkedTags.length < 1) {
-      projectView.displayAll();
-
-      if (window.location.pathname !== '/projects') {
-        $('#projects').hide();
-      }
-    } else {
-      $checkedTags.each(function(t) {
-          projectView.displayTag($checkedTags.eq(t).val());
-      });
-      // projectView.displayTag($(this).val());
-    }
-  });
-};*/
-
-/*projectView.populateFilter = function() {
-  console.log('populate filters');
-  $('.populated').each(function() {
-    console.log('populating filters');
-     var val = $(this).data('tags');
-     val.map(function(tag) {
-       optionTag = '<option value="' + tag + '">' + tag + '</option>';
-       if ($('#tag-filter option[value="' + tag + '"]').length === 0) {
-         $('#tag-filter').append(optionTag);
-       }
-     });
-  });
-};
-
-projectView.handleFilter = function() {
-  $('#tag-filter').on('change', function() {
-    projectView.clearItems();
-    if ($(this).val()=='') {
-      projectView.displayAll();
-    } else {
-      projectView.displayTag($(this).val());
-    }
-  });
-};*/
-
 projectView.clearItems = function() {
   $('.populated').remove();
 };
