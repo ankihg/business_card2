@@ -148,6 +148,8 @@ projectView.displayTag = function(tag) {
 projectView.initIndexPage = function() {
   projectView.populateChecklist();
   projectView.handleChecklist();
+  aboutController.handle();
+
 };
 
 
