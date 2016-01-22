@@ -42,11 +42,15 @@ projectView.handleChecklist = function() {
 
     var $checkedTags = $(this).find(':checked');
 
-    if (window.location.pathname === '/projects') {
+    if (window.location.pathname !== '/') {
       if ($checkedTags.length > 0) {
-        var firstTag = $checkedTags.eq(0).val();
-        console.log('/' + resource + '/' + firstTag.replace(/\W+/g, '+'));
-        page('/' + resource + '/' + firstTag.replace(/\W+/g, '+')); // Replace any/all whitespace with a +
+        // var firstTag = $checkedTags.eq(0).val();
+        var tagsStr = "";
+        $checkedTags.each(function(i) {
+          tagsStr += $checkedTags.eq(i).val().replace(/\W+/g, '+') + '&';
+        });
+        page('/' + resource + '/' + tagsStr);
+        // page('/' + resource + '/' + firstTag.replace(/\W+/g, '-')); // Replace any/all whitespace with a +
       } else { //nothing is checked
         page('/' + resource + '/'); //go to projects page
       }

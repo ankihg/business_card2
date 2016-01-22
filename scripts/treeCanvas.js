@@ -1,6 +1,8 @@
 (function(module) {
 
-function loadTrees() {
+var Tree = {};
+
+Tree.loadTrees = function() {
 //canvas setup
 //var w = document.body.clientWidth;
 //var h = document.body.clientHeight;
@@ -33,8 +35,8 @@ ctx.drawImage(tree, i*canvas.width/nTrees+xPert, yPert*canvas.height/10);
 
 }
 
-loadTrees();
-window.onresize = loadTrees;
+Tree.loadTrees();
+window.onresize = Tree.loadTrees;
 
 //http://stackoverflow.com/questions/1038727/how-to-get-browser-width-using-javascript-code
 function getWidth() {
@@ -65,5 +67,5 @@ function getHeight() {
  }
 }
 
-module.loadTrees = loadTrees;
+module.Tree = Tree;
 })(window);
