@@ -6,11 +6,13 @@ projectView.index = function(ctx) {
 
   projectView.clearItems();
 
-  if (ctx.params.tag) {
-    projectView.displayTag(ctx.params.tag);
-  } else {
-    projectView.displayAll();
-  }
+  projectView.display(ctx);
+
+  // if (ctx.params.tag) {
+  //   projectView.displayTag(ctx.params.tag);
+  // } else {
+  //   projectView.displayAll();
+  // }
 }
 
 projectView.populateChecklist = function() {
@@ -116,6 +118,12 @@ projectView.clearItems = function() {
   $('.populated').remove();
 };
 
+projectView.display = function(ctx) {
+  ctx.projects.forEach(function(i){
+        i.make();
+   });
+};
+
 projectView.displayTag = function(tag) {
   Project.all.map(function(i){
     // if ($('#projects .row[id="' + i.id + '"]').length === 0) {
@@ -126,12 +134,12 @@ projectView.displayTag = function(tag) {
  });
 };
 
-projectView.displayAll = function() {
-  console.log('display all');
-  Project.all.forEach(function(i){
-      i.make();
- });
-};
+// projectView.displayAll = function() {
+//   console.log('display all');
+//   Project.all.forEach(function(i){
+//       i.make();
+//  });
+// };
 
 projectView.initIndexPage = function() {
   projectView.populateChecklist();

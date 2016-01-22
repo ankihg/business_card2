@@ -18,6 +18,17 @@ projectController.index = function(ctx, next) {
 
   };
 
+projectController.loadAll = function(ctx, next) {
+  ctx.projects = Project.all;
+  next();
+};
+
+projectController.loadByTag = function(ctx, next) {
+  ctx.projects = Project.all.filter(function(p) {
+    return (p.tags.indexOf(ctx.params.tag) >= 0)
+  });
+  next();
+};
 
 
   module.projectController = projectController;
