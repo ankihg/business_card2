@@ -5,6 +5,7 @@
   aboutController.index = function() {
     $('.contain-checklist').hide();
     $('#projects').hide();
+    $('#repos').hide();
 
     $('#contain-education').show();
     $('#contain-technical-skills').show();
